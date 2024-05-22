@@ -1,6 +1,11 @@
+"use client";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Home() {
+  const { setTheme } = useTheme();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -108,6 +113,10 @@ export default function Home() {
           </p>
         </a>
       </div>
+
+      <Button variant="outline" onClick={() => setTheme("light")}>
+        Button
+      </Button>
     </main>
   );
 }
